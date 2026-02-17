@@ -4,13 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftCart E-Commerce</title>
+    <!-- css link -->
+     <link rel="stylesheet" href="style.css">
+     <!--Daisy UI Link -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <!-- Font Awsome CDN -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
 </head>
 <body>
-    <!-- header section -->
-    <header>
+    <!-- header section start-->
+    <header class=" bg-base-100 shadow-sm">
+        <!-- navber -->
+        <nav class="w-9/12 mx-auto">
+            <div class="navbar flex justify-between">
+                <!-- navber (website name) -->
+                <div>
+                    <h1 class=" text-xl font-bold text-[#4F46E5]">SwiftCart</h1>
+                </div>
 
-        <h1>Hellow World</h1>
+                <!-- Menu items -->
+                 <div class="flex gap-7 ">
+                    <div>Home</div>
+                    <div>Products</div>
+                    <div>About</div>
+                    <div>Contact</div>
+                 </div>
 
+                <div>
+                    <!-- Card Icon on Navber -->
+                    <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <div class="indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
+                        <span class="badge badge-sm indicator-item">8</span>
+                        </div>
+                    </div>
+                    <div
+                        tabindex="0"
+                        class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                        <div class="card-body">
+                        <span class="text-lg font-bold">8 Items</span>
+                        <span class="text-info">Subtotal: $999</span>
+                        <div class="card-actions">
+                            <button class="btn btn-primary btn-block">View cart</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
+    <!-- header section end -->
+
+    <!-- main section start -->
+
+    <main>
+        <!-- hero section start -->
+        
+            <div class=" relative hero min-h-[80vh]  bg-center flex items-center"
+                    style="background-image: url(image/banner-image.png);"
+                    >
+
+                    <div class="absolute inset-0 
+                        bg-gradient-to-r 
+                        from-[#0f172a]/90 
+                        via-[#0f172a]/70 
+                        to-transparent">
+                    </div>
+
+            <div class=" relative z-10 w-9/12 mx-auto text-start text-white">
+                <div class="">
+                    <h1 class="mb-5 text-4xl font-bold">Best Collection For You</h1>
+                    <p class="mb-5 text-gray-400">
+                        Discover the latest trends in fashion, electronics, and more.
+                        <br>
+                         Shop with confidence and style at SwiftCard.
+                    </p>
+                    <button class="btn btn-primary">Shop Now</button>
+                </div>
+            </div>
+        </div>
+
+         <!-- hero section End -->
+
+         <!-- about Us -->
+        <div class="w-9/12 mx-auto my-10 md:my-20 space-y-10">
+            <div class="text-center space-y-2">
+                <h1 class="text-2xl font-bold">Why Choose Us</h1>
+                <p class=" text-gray-500">We provide the best Shopping experience with top-notch services.</p>
+            </div>
+
+            <!-- about us card -->
+             <div class="flex justify-between gap-5">
+                <div class="relative  bg-white shadow-sm p-5 space-y-3rounded-sm ">
+                    <div class="absolute -top-4 left-4 bg-white p-2 shadow-md rounded">
+                        <i class="fa-regular fa-truck text-primary text-lg"></i>
+                    </div>
+                    <h2 class="font-bold text-xl">Fast Delivery</h2>
+                    <p class="text-gray-500">Get your orders delivered to your doorstep quickly and efficiently.</p>
+                </div>
+
+                <div class="relative  bg-white shadow-sm p-5 space-y-3 rounded-sm">
+                    <div class="absolute -top-4 left-4 bg-white p-2 shadow-md rounded">
+                        <i class="fa-regular fa-headphones text-primary text-lg"></i>
+                    </div>
+                    <h2 class="font-bold text-xl">24/7 Support</h2>
+                    <p class="text-gray-500">Our support team is available around the clock to assist you anytime.</p>
+                </div>
+
+                <div class="relative  bg-white shadow-sm p-5 space-y-3 rounded-sm">
+                    <div class="absolute -top-4 left-4 bg-white p-2 shadow-md rounded">
+                        <i class="fa-solid fa-shield text-primary text-lg"></i>
+                    </div>
+                    <h2 class="font-bold text-xl">Secure Payment</h2>
+                    <p class="text-gray-500">Experience safe and secure transactions with our encrypted payment systems.</p>
+                </div>
+
+                <div class="relative  bg-white shadow-sm p-5 space-y-3 rounded-sm">
+                    <div class="absolute -top-4 left-4 bg-blue-100 p-2 shadow-md rounded">
+                        <i class="fa-solid fa-arrows-rotate text-primary text-lg"></i>
+                    </div>
+                    <h2 class="font-bold text-xl">Easy Returns</h2>
+                    <p class="text-gray-500">Not satisfied? Return your products easily within 30 days.</p>
+                </div>
+             </div>
+          
+            
+
+        </div>
+
+
+         <!-- about Us -->
+    </main>
 </body>
 </html>
