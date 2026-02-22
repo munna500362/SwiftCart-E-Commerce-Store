@@ -64,18 +64,35 @@
     <!-- main section start -->
 
     <main class="my-10 md: md:my-15 w-10/12 mx-auto">
-        <div class="md:my-19 text-center space-y-5">
+        <div class="md:my-19 text-center space-y-5">    
             <h1 class="text-2xl font-bold"> Our Products</h1>
 
             <div id="product-btn" class="flex flex-col md:flex-row justify-center text-center gap-3 md:gap-5">
 
-                <button onclick = "productAllCategory()" class=" btn hover:border-[#422AD5] hover:bg-[#422AD5] hover:text-white">All</button>
+                <button onclick = "productAllCategory()" id="button" class=" btn btn-category active  hover:border-[#422AD5] hover:bg-[#422AD5] hover:text-white">All</button>
             </div>
 
             <div id="category-card" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-5 md:mt-10 gap-3">
                 <!-- card section -->
                     
                 
+            </div>
+            <!-- Model -->
+            <div>
+                <!-- Open the modal using ID.showModal() method -->
+                    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+                    <dialog id="singleBtnShowModel" class="modal">
+                    <div id="BtnModelValue" class="modal-box">
+                        <h3 class="text-lg font-bold">Hello!</h3>
+                        <p class="py-4">Press ESC key or click the button below to close</p>
+                        <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                        </div>
+                    </div>
+                    </dialog>
             </div>
         </div>
     </main>

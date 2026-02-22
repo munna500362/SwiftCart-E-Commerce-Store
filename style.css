@@ -4,3 +4,10 @@
       background-position: center;
       background-repeat: no-repeat;
 } */
+
+
+.active{
+      color: white; 
+      background-color: #4F46E5;
+}
+

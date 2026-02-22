@@ -1,3 +1,18 @@
+// Active Status
+
+function SetActiveBtn (id){
+    const removeBtn = document.querySelectorAll(".btn-category")
+    removeBtn.forEach((Btn) =>{
+            Btn.classList.remove('active');
+
+    })
+
+    const activebtn = document.getElementById(id);
+    if(activebtn){
+        activebtn.classList.add("active")
+    }
+}
+
 // Product button start
 
 function productBtn  (){
@@ -12,11 +27,11 @@ function productBtnDefined(data){
     data.forEach((item) => {
 
         const productBtnID = document.getElementById('product-btn');
-            productBtnID.innerHTML = ''
         const button = document.createElement('button');
 
         button.innerText = item;
-        button.className = "btn hover:border-[#422AD5] hover:bg-[#422AD5] hover:text-white";
+        button.id = item;
+        button.className = "btn btn-category hover:border-[#422AD5] hover:bg-[#422AD5] hover:text-white";
 
         button.addEventListener("click", () => {
             CategoryCard(item);
@@ -33,19 +48,24 @@ function productAllCategory (){
     const url = `https://fakestoreapi.com/products`;
     fetch(url)
     .then((res) => res.json())
-    .then((data) => productAllCategoryCard(data))
+    .then((data) =>{
+        SetActiveBtn("button")
+        
+        productAllCategoryCard(data)
+    })
 }
 
 
 
 function productAllCategoryCard (categorys){
-    console.log(categorys)
-    categorys.forEach ((category) =>{
         const categoryCard = document.getElementById('category-card');
+             categoryCard.innerHTML = "";
+        categorys.forEach ((category) =>{
+        
 
-        categoryCardDetails = document.createElement('div');
-        categoryCardDetails.classList.add('gap-3');
-        categoryCardDetails.innerHTML = 
+        let categoryCardDetails = document.createElement('div');
+            categoryCardDetails.classList.add('gap-3');
+            categoryCardDetails.innerHTML = 
         `
             <div class="card bg-base-100 shadow-sm">
                         <figure class="px-5 md:px-10 py-5 md:py-10 bg-gray-500">
@@ -61,7 +81,7 @@ function productAllCategoryCard (categorys){
                             </div>
                         
                             <div class="space-y-2">
-                                <h3 class="text-xl font-semibold truncate w-full">${category.title}</h3>
+                                <h3 class="text-xl font-semibold truncate w-full"> ${category.title}</h3>
                                 <p class = "text-xl font-bold">$${category.price}</p>
                             </div>
                             <div class="flex justify-between gap-5">
@@ -91,17 +111,24 @@ function CategoryCard (id){
     const url = `https://fakestoreapi.com/products/category/${id}`;
     fetch(url)
     .then((res) => res.json())
-    .then((data) => CategoryCardDetails(data))
+    .then((data) => {
+        SetActiveBtn(id)
+        CategoryCardDetails(data)
+    
+})
 }
 
 
 
 function CategoryCardDetails (categorys){
     // console.log(categorys)
+
+    const categoryCards = document.getElementById('category-card');
+        categoryCards.innerHTML = ""
     categorys.forEach ((category) =>{
-        const categoryCards = document.getElementById('category-card');
         
         CardDetails = document.createElement('div');
+       
         CardDetails.classList.add('gap-3');
         CardDetails.innerHTML = 
         `
@@ -123,7 +150,7 @@ function CategoryCardDetails (categorys){
                                 <p class = "text-xl font-bold">$${category.price}</p>
                             </div>
                             <div class="flex justify-between gap-5">
-                                    <button class="btn">
+                                    <button onclick = "singleBtnShowModel(${category.id})" class="btn">
                                     <i class="fa-regular fa-eye"></i>
                                     Buy Now</button>
                                     <button class="btn btn-primary">Add to Card</button>
@@ -138,35 +165,40 @@ function CategoryCardDetails (categorys){
 }
 
 
+function singleBtnShowModel (id) {
+
+    const url = `https://fakestoreapi.com/products/${id}`
+    fetch (url)
+    .then((res) => res.json())
+    .then((data) => singleBtnShowModelCard(data))
+
+
+
+}
+
+function singleBtnShowModelCard(data){
+            // console.log(data)
+
+            // console.log(detail)
+        const BtnShowModel = document.getElementById("singleBtnShowModel").showModal()
+
+        const BtnModelValue = document.getElementById("BtnModelValue");
+
+        const ModelValue = document.createElement("div");
+
+        ModelValue.innerHTML =
+            `
+                <h1>${data.title}</h1>
+            `
+        BtnModelValue.appendChild(ModelValue)
+
+    }
+
+   
+
+
 
 
 productBtn()
+productAllCategory()
 
-
-// category
-// : 
-// "men's clothing"
-// description
-// : 
-// "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
-// id
-// : 
-// 1
-// image
-// : 
-// "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
-// price
-// : 
-// 109.95
-// rating
-// : 
-// {rate: 3.9, count: 120}
-// title
-// : 
-// "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
-
-
-// "rating": {
-// "rate": 3.9,
-// "count": 120
-// }
