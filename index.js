@@ -85,7 +85,7 @@ function productAllCategoryCard (categorys){
                                 <p class = "text-xl font-bold">$${category.price}</p>
                             </div>
                             <div class="flex justify-between gap-5">
-                                    <button class="btn">
+                                    <button onclick = "singleBtnShowModel(${category.id})" class="btn">
                                     <i class="fa-regular fa-eye"></i>
                                     Buy Now</button>
                                     <button class="btn btn-primary">Add to Card</button>
@@ -142,7 +142,7 @@ function CategoryCardDetails (categorys){
                         <div class="text-start p-3 md:p-5 space-y-3 md:space-y-5">
                             <div class="flex justify-between"> 
                                 <button class="rounded-full px-2 py-1 text-[#4F46E5] bg-gray-300 "> ${category.category}</button>
-                                <p><i class="fa-solid fa-star text-orange-300 bg-orange-300"></i> <span> ${category.rating.rate} (${category.rating.count})</span></p>
+                                <p><i class="fa-solid fa-star text-orange-300"></i> <span> ${category.rating.rate} (${category.rating.count})</span></p>
                             </div>
                         
                             <div class="space-y-2">
@@ -172,8 +172,6 @@ function singleBtnShowModel (id) {
     .then((res) => res.json())
     .then((data) => singleBtnShowModelCard(data))
 
-
-
 }
 
 function singleBtnShowModelCard(data){
@@ -183,12 +181,20 @@ function singleBtnShowModelCard(data){
         const BtnShowModel = document.getElementById("singleBtnShowModel").showModal()
 
         const BtnModelValue = document.getElementById("BtnModelValue");
+        BtnModelValue.innerHTML = "";
+
 
         const ModelValue = document.createElement("div");
+        ModelValue.classList.add("space-y-5")
 
         ModelValue.innerHTML =
             `
-                <h1>${data.title}</h1>
+                <h1 class = " text-xl md:text-2xl font-bold text-start">${data.title}</h1>
+                <p class = "text-gray-500 text-start">${data.description}</p>
+                <div class = " flex gap-5 ">
+                    <p class = " font-semibold text-start rounded-full px-2 border border-gray-200 bg-gray-300">$${data.price} </p>
+                    <p class = " font-semibold text-start rounded-full px-2 border border-gray-200 bg-gray-300"><i class="fa-solid fa-star text-orange-300"></i>${data.rating.rate} </p>
+                </div>
             `
         BtnModelValue.appendChild(ModelValue)
 
