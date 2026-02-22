@@ -58,10 +58,15 @@ function productAllCategory (){
 
 
 function productAllCategoryCard (categorys){
-        const categoryCard = document.getElementById('category-card');
-             categoryCard.innerHTML = "";
+        const categoryCards = document.getElementById('category-card');
+             categoryCards.innerHTML = "";
+
+        
+            
+
         categorys.forEach ((category) =>{
         
+           
 
         let categoryCardDetails = document.createElement('div');
             categoryCardDetails.classList.add('gap-3');
@@ -95,7 +100,7 @@ function productAllCategoryCard (categorys){
                         </div>
             </div>
         `
-        categoryCard.appendChild(categoryCardDetails)
+        categoryCards.appendChild(categoryCardDetails)
     })
 }
 
@@ -185,7 +190,7 @@ function singleBtnShowModelCard(data){
 
 
         const ModelValue = document.createElement("div");
-        ModelValue.classList.add("space-y-5")
+        ModelValue.classList.add("space-y-5", "text-start")
 
         ModelValue.innerHTML =
             `
@@ -195,6 +200,8 @@ function singleBtnShowModelCard(data){
                     <p class = " font-semibold text-start rounded-full px-2 border border-gray-200 bg-gray-300">$${data.price} </p>
                     <p class = " font-semibold text-start rounded-full px-2 border border-gray-200 bg-gray-300"><i class="fa-solid fa-star text-orange-300"></i>${data.rating.rate} </p>
                 </div>
+                
+                <button class="btn bg-[#4F46E5] text-white text-start">Buy Now</button>
             `
         BtnModelValue.appendChild(ModelValue)
 
@@ -205,6 +212,72 @@ function singleBtnShowModelCard(data){
 
 
 
+    function topRatedCard (){
+    const url = `https://fakestoreapi.com/products`;
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) =>{
+        // SetActiveBtn("button")
+        
+        topRatedCardValue(data)
+    })
+}
+
+
+
+function topRatedCardValue (categorys){
+        const categoryCards = document.getElementById('category-card');
+            //  categoryCards.innerHTML = "";
+        // const topRatedCardModel = document.getElementById("topCardShowModel").showModal()
+    //    console.log(categorys)
+         const topRated = categorys
+        .sort((a, b) => b.rating.rate - a.rating.rate)
+        .slice(0, 3); 
+
+        // console.log(topRated)
+        // console.log(slice)
+
+        topRated.forEach((ratedValue) =>{
+            const trandingProduct = document.getElementById("tranding-product");
+            const threeSingleValues = document.createElement('div');
+            threeSingleValues.innerHTML = 
+            `
+                   <div class="card bg-base-100 shadow-sm">
+                        <figure class="px-5 md:px-10 py-5 md:py-10 bg-gray-500">
+                            <img class="rounded-xl w-1/2 h-40 object-contain"
+                            src="${ratedValue.image}"
+                            alt="Shoes"
+                             />
+                        </figure>
+                        <div class="text-start p-3 md:p-5 space-y-3 md:space-y-5">
+                            <div class="flex justify-between"> 
+                                <button class="rounded-full px-2 py-1 text-[#4F46E5] bg-gray-300 "> ${ratedValue.category}</button>
+                                <p><i class="fa-solid fa-star text-orange-300 bg-orange-300"></i> <span> ${ratedValue.rating.rate} (${ratedValue.rating.count})</span></p>
+                            </div>
+                        
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold truncate w-full"> ${ratedValue.title}</h3>
+                                <p class = "text-xl font-bold">$${ratedValue.price}</p>
+                            </div>
+                            <div class="flex justify-between gap-5">
+                                    <button onclick = "singleBtnShowModel(${ratedValue.id})" class="btn">
+                                    <i class="fa-regular fa-eye"></i>
+                                    Buy Now</button>
+                                    <button class="btn btn-primary">Add to Card</button>
+                            </div>
+                            
+                            </div>
+                        </div>
+            </div>
+            `
+
+            trandingProduct.appendChild(threeSingleValues)
+        })
+    }
+
+
 productBtn()
 productAllCategory()
+topRatedCard ()
+
 
