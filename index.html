@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftCart E-Commerce</title>
     <!-- css link -->
-     <link rel="stylesheet" href="style.css">
-     <!--Daisy UI Link -->
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-     <!-- Font Awsome CDN -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!--Daisy UI Link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awsome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-      
+
 
 </head>
+
 <body>
     <!-- header section start-->
     <header class=" bg-base-100 shadow-sm fixed top-0 left-0 w-full z-50">
@@ -26,38 +28,66 @@
                     <h1 class=" text-xl font-bold text-[#4F46E5]">SwiftCart</h1>
                 </div>
 
-                <!-- Menu items -->
-                 <div id="nav-menu" class="flex gap-7 ">
-                    
-                        <div class=" hover:text-[#4F46E5]"> <li class="list-none"><a href="index.html">Home</a></li></div>
-                        <div class=" hover:text-[#4F46E5]"> <li class="list-none"><a href="Products.html">Products</a></li></div>
-                        <div class=" hover:text-[#4F46E5]"> <li class="list-none"> <a href="">About</a></li></div>
-                        <div class=" hover:text-[#4F46E5]"> <li class="list-none"><a href="">Contact</a></li></div>
-                    
-                 </div>
+                <!-- Menu items for md to lg-->
+                <div id="nav-menu" class="hidden md:flex gap-7 ">
+
+                    <div class=" hover:text-[#4F46E5]">
+                        <li class="list-none"><a href="index.html">Home</a></li>
+                    </div>
+                    <div class=" hover:text-[#4F46E5]">
+                        <li class="list-none"><a href="Products.html">Products</a></li>
+                    </div>
+                    <div class=" hover:text-[#4F46E5]">
+                        <li class="list-none"> <a href="">About</a></li>
+                    </div>
+                    <div class=" hover:text-[#4F46E5]">
+                        <li class="list-none"><a href="">Contact</a></li>
+                    </div>
+
+                </div>
+
+                <!-- Menu items for small not for md and lg -->
+               <div class="flex flex-row-reverse md:flex-none">
+                 <div class="md:hidden">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost">
+                            <i class="fa-solid fa-bars text-lg"></i>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-40 p-2 shadow">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="Products.html">Products</a></li>
+                            <li><a href="index.html">About</a></li>
+                            <li><a href="index.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div>
                     <!-- Card Icon on Navber -->
-                    <div class="dropdown dropdown-end">
-                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                        <div class="indicator">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
-                        <span class="badge badge-sm indicator-item">8</span>
+                    <div class="dropdown dropdown-end ">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <div class="indicator">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <span class="badge badge-sm indicator-item">8</span>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        tabindex="0"
-                        class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
-                        <div class="card-body">
-                        <span class="text-lg font-bold">8 Items</span>
-                        <span class="text-info">Subtotal: $999</span>
-                        <div class="card-actions">
-                            <button class="btn btn-primary btn-block">View cart</button>
+                        <div tabindex="0" class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                            <div class="card-body">
+                                <span class="text-lg font-bold">8 Items</span>
+                                <span class="text-info">Subtotal: $999</span>
+                                <div class="card-actions">
+                                    <button class="btn btn-primary btn-block">View cart</button>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
+               </div>
             </div>
         </nav>
     </header>
@@ -67,17 +97,16 @@
 
     <main>
         <!-- hero section start -->
-        
-        <div class=" relative hero min-h-[80vh]  bg-center flex items-center"
-                    style="background-image: url(image/banner-image.png);"
-                    >
 
-                    <div class="absolute inset-0 
+        <div class=" relative hero min-h-[80vh]  bg-center flex items-center"
+            style="background-image: url(image/banner-image.png);">
+
+            <div class="absolute inset-0 
                         bg-gradient-to-r 
                         from-[#0f172a]/90 
                         via-[#0f172a]/70 
                         to-transparent">
-                    </div>
+            </div>
 
             <div class=" relative z-10 w-9/12 mx-auto text-start text-white">
                 <div class="">
@@ -85,16 +114,16 @@
                     <p class="mb-5 text-gray-400">
                         Discover the latest trends in fashion, electronics, and more.
                         <br>
-                         Shop with confidence and style at SwiftCard.
+                        Shop with confidence and style at SwiftCard.
                     </p>
                     <button class="btn btn-primary">Shop Now</button>
                 </div>
             </div>
         </div>
 
-         <!-- hero section End -->
-
-         <!-- about Us -->
+        <!-- hero section End -->
+  
+        <!-- about Us -->
         <div class="w-9/12 mx-auto my-10 md:my-20 space-y-10">
             <div class="text-center space-y-2">
                 <h1 class="text-2xl font-bold">Why Choose Us</h1>
@@ -102,7 +131,7 @@
             </div>
 
             <!-- about us card -->
-             <div class="flex justify-between gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 space-y-5">
                 <div class="relative  bg-white shadow-sm p-5 space-y-3rounded-sm ">
                     <div class="absolute -top-4 left-4 bg-white p-2 shadow-md rounded">
                         <i class="fa-regular fa-truck text-primary text-lg"></i>
@@ -124,7 +153,8 @@
                         <i class="fa-solid fa-shield text-primary text-lg"></i>
                     </div>
                     <h2 class="font-bold text-xl">Secure Payment</h2>
-                    <p class="text-gray-500">Experience safe and secure transactions with our encrypted payment systems.</p>
+                    <p class="text-gray-500">Experience safe and secure transactions with our encrypted payment systems.
+                    </p>
                 </div>
 
                 <div class="relative  bg-white shadow-sm p-5 space-y-3 rounded-sm">
@@ -134,8 +164,8 @@
                     <h2 class="font-bold text-xl">Easy Returns</h2>
                     <p class="text-gray-500">Not satisfied? Return your products easily within 30 days.</p>
                 </div>
-             </div>
-          
+            </div>
+
             <!-- Tranding Product -->
 
             <div>
@@ -146,98 +176,101 @@
             </div>
 
 
-             <div>
+            <div>
                 <!-- Open the modal using ID.showModal() method -->
-                    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-                    <dialog id="topCardShowModel" class="modal">
-                    <div  class="modal-box">
-                       <div id="BtnModelValue" >
+                <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+                <dialog id="topCardShowModel" class="modal">
+                    <div class="modal-box">
+                        <div id="BtnModelValue">
 
-                       </div>
+                        </div>
                         <div class="modal-action text-start">
-                        <form method="dialog">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn">Close</button>
-                        </form>
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Close</button>
+                            </form>
                         </div>
                     </div>
-                    </dialog>
+                </dialog>
             </div>
         </div>
 
 
-         <!-- about Us -->
+        <!-- about Us -->
 
-        
-       
+
+
     </main>
-    
+
     <!-- footer section start -->
     <footer class="bg-[#1f2937] text-white py-5 md:py-10">
         <div>
-            <div class="flex justify-between w-9/12 mx-auto gap-5 md:gap-10">
-            <div class="flex-1 space-y-3 md:space-y-5">
-                <h3 class="text-[#4F46E5] font-bold text-xl">SwiftCart</h2>
-                <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et cum hic doloribus tenetur optio! Est totam voluptates quos odio?</p>
-            </div>
-            <div class="flex-1 text-gray-400 space-y-2">
-                <h4 class="font-bold text-gray-500">
-                    QUICK LINKS
-                </h4>
-                <p>Home</p>
-                <p>Products</p>
-                <p>About</p>
-                <p>Contact</p>
-            </div>
-            <div class="flex-1 text-gray-400 space-y-2">
-                <h4 class="font-bold text-gray-500">SUPPORT</h4>
-                <P>FAQ</P>
-                <P>Shipping</P>
-                <P>Returns</P>
-                <P>Privacy Policy</P>
-            </div>
-
-            <div class="flex-1 text-gray-400 space-y-2">
-                <h3 class="font-bold text-sm ">SUBSCRIBE TO OUR NEWSLETTER</h3>
-                <P>The latest news, articles, and resources, sent to your inbox weekly</P>
-                <div class="flex overflow-hidden">
-                    <form action="" class="space-y-3 ">
-                        <input class="outline-none border p-2 rounded" type="email" name="" id="" placeholder="Enter Your Emal">
-                        <br>
-                        <button class="btn btn-primary">Subscribe</button>
-                      
-                    </form>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-9/12 mx-auto gap-5 md:gap-10">
+                <div class="flex-1 space-y-3 md:space-y-5">
+                    <h3 class="text-[#4F46E5] font-bold text-xl">SwiftCart</h2>
+                        <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                            et cum hic doloribus tenetur optio! Est totam voluptates quos odio?</p>
                 </div>
+                <div class="flex-1 text-gray-400 space-y-2">
+                    <h4 class="font-bold text-gray-500">
+                        QUICK LINKS
+                    </h4>
+                    <p>Home</p>
+                    <p>Products</p>
+                    <p>About</p>
+                    <p>Contact</p>
+                </div>
+                <div class="flex-1 text-gray-400 space-y-2">
+                    <h4 class="font-bold text-gray-500">SUPPORT</h4>
+                    <P>FAQ</P>
+                    <P>Shipping</P>
+                    <P>Returns</P>
+                    <P>Privacy Policy</P>
+                </div>
+
+                <div class="flex-1 text-gray-400 space-y-2">
+                    <h3 class="font-bold text-sm ">SUBSCRIBE TO OUR NEWSLETTER</h3>
+                    <P>The latest news, articles, and resources, sent to your inbox weekly</P>
+                    <div class="flex overflow-hidden">
+                        <form action="" class="space-y-3 ">
+                            <input class="outline-none border p-2 rounded" type="email" name="" id=""
+                                placeholder="Enter Your Emal">
+                            <br>
+                            <button class="btn btn-primary">Subscribe</button>
+
+                        </form>
+                    </div>
+                </div>
+
+
             </div>
 
-
         </div>
-        
-        </div>
-        <div class=" w-9/12 mx-auto gap-5 md:gap-10">
-          
-                <!-- Top Border Line -->
-                 <hr class="border-t border-gray-600 my-5 w-full">
+        <div class=" w-9/12 mx-auto gap-5 md:gap-10 ">
 
-                 <div class="flex justify-between">
-                     <p class="text-sm">&copy; 2025 SwiftCart, Inc. All rights reserved.</p>
-    
-                    <!-- Social Icons -->
-                    <div class="flex space-x-4 mt-4 md:mt-0">
+            <!-- Top Border Line -->
+            <hr class="border-t border-gray-600 my-5 w-full">
+
+            <div class="flex flex-col-reverse md:flex-row justify-between space-y-5">
+                <p class="text-sm">&copy; 2025 SwiftCart, Inc. All rights reserved.</p>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-4 mt-4 md:mt-0 mb-3">
                     <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="hover:text-white"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a> -->
                     <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" class="hover:text-white"><i class="fa-regular fa-envelope"></i></a>
-                    </div>
-                 </div>
+                </div>
             </div>
         </div>
-        
+        </div>
+
 
     </footer>
 
 
     <script src="index.js"></script>
 </body>
+
 </html>
