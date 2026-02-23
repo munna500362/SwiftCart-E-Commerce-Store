@@ -12,3 +12,4 @@ async/await makes API fetching easier to read and write by allowing asynchronous
 
 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
 Global scope variables are accessible in everywhere, function scope variables are only accessible inside the function where they are declared in and block scope (using let and const) limits variables to the block { } where they are defined.
+
