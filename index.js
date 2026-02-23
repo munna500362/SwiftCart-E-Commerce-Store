@@ -243,13 +243,13 @@ function topRatedCardValue (categorys){
             threeSingleValues.innerHTML = 
             `
                    <div class="card bg-base-100 shadow-sm">
-                        <figure class="px-5 md:px-10 py-5 md:py-10 bg-gray-500">
+                        <figure class="px-5 lg:px-10 py-5 lg:py-10 bg-gray-500">
                             <img class="rounded-xl w-1/2 h-40 object-contain"
                             src="${ratedValue.image}"
                             alt="Shoes"
                              />
                         </figure>
-                        <div class="text-start p-3 md:p-5 space-y-3 md:space-y-5">
+                        <div class="text-start p-3 lg:p-5 space-y-3 lg:space-y-5">
                             <div class="flex justify-between"> 
                                 <button class="rounded-full px-2 py-1 text-[#4F46E5] bg-gray-300 "> ${ratedValue.category}</button>
                                 <p><i class="fa-solid fa-star text-orange-300 bg-orange-300"></i> <span> ${ratedValue.rating.rate} (${ratedValue.rating.count})</span></p>
